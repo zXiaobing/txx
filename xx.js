@@ -60,9 +60,9 @@ window.addEventListener = function () {
 
 function fireOnReady (func) {
     if (document.readyState === 'complete') {
-        setTimeout(func, 3000);
+        setTimeout(func, 5000);
     } else {
-        let f = () => setTimeout(func, 3000);
+        let f = () => setTimeout(func, 5000);
         document.addEventListener('DOMContentLoaded', f, false);
         window.addEventListener('load', f, false);
     }
@@ -148,6 +148,7 @@ fireOnReady(() => {
         }
         //autoRead(10);
         function selectVideo () {
+            console.log('in select video')
             new Promise(resolve => {
                 setTimeout(() => {
                     let id = 0
